@@ -29,7 +29,7 @@ class MyStreamListener(tweepy.StreamListener):
         tweet = json.loads(data)
         id_tweet = tweet["id_str"]
 
-        if not contains_word(tweet["text"][0], "@") and not tweet["retweeted"] and not tweet["text"].startswith("RT @"):
+        if not contains_word(tweet["text"][0], "@") and not tweet["is_quote_status"] and not tweet["text"].startswith("RT @"):
             api.retweet(id_tweet)
             print(tweet["text"])
 
@@ -38,4 +38,4 @@ api, auth = auth()
 myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener = myStreamListener)
 
-myStream.filter(track = ["skateboard", "skate", "skateur", "skates", "skater", "kickflip", "heelflip", "shov it", "skatos", "skateshop"], languages=["fr"])
+myStream.filter(track = ["skateboard", "skate", "skateur", "skates", "skater", "kickflip", "heelflip", "shov it", "skatos", "skateshop", "@aurelgiraud_", "@Lask8boarderie", "@josephgarbaccio", "@redbullskate", "@biomeskateboard", "@rockslideshop", "@EDYNEclothing", "@vansskate"], languages=["fr"])
