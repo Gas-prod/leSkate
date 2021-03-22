@@ -5,7 +5,7 @@ def auth():
     consumer_key = "your_consumer_key"
     consumer_secret = "your_consumer_secret"
 
-    access_token = "your_acces_token"
+    access_token = "your_access_token"
     access_token_secret = "your_access_token_secret"
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -19,8 +19,6 @@ from tweepy.streaming import StreamListener
 import time
 import json
 
-def contains_word(string, word):
-    return (' ' + word + ' ') in (' ' + string + ' ')
 
 class MyStreamListener(tweepy.StreamListener):
 
@@ -29,7 +27,7 @@ class MyStreamListener(tweepy.StreamListener):
         tweet = json.loads(data)
         id_tweet = tweet["id_str"]
 
-        if not contains_word(tweet["text"][0], "@") and not tweet["is_quote_status"] and not tweet["text"].startswith("RT @"):
+        if not tweet["text"].startswith("@") and not tweet["is_quote_status"] and not tweet["text"].startswith("RT @"):
             api.retweet(id_tweet)
             print(tweet["text"])
 
