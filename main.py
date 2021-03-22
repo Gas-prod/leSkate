@@ -36,4 +36,4 @@ api, auth = auth()
 myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener = myStreamListener)
 
-myStream.filter(track = ["skateboard", "skate", "skateur", "skates", "skater", "kickflip", "heelflip", "shov it", "skatos", "skateshop", "@aurelgiraud_", "@Lask8boarderie", "@josephgarbaccio", "@redbullskate", "@biomeskateboard", "@rockslideshop", "@EDYNEclothing", "@vansskate"], languages=["fr"])
+myStream.filter(track = ["skateboard", "skate", "skateur", "skates", "skater", "kickflip", "heelflip", "shov it", "skatos", "skateshop", "skatepark", "@aureliengiraud", "@Lask8boarderie", "@josephgarbaccio", "@redbullskate", "@biomeskateboard", "@rockslideshop", "@EDYNEclothing", "@vansskate", "@BrailleSkate"], languages=["fr"])
