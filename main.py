@@ -31,7 +31,6 @@ class MyStreamListener(tweepy.StreamListener):
 
         if not tweet["text"].startswith("@") and not tweet["is_quote_status"] and not tweet["text"].startswith("RT @"):
             api.retweet(id_tweet)
-            print(tweet["text"])
 
 api, auth = auth()
 
